@@ -1,0 +1,72 @@
+#Maps
+map is a built in Python function that takes in a Function and an iterable object. Essentially, it allows us to apply a function to each item in a list of values.
+
+###########
+#Example 1#
+###########
+def (square):
+    return num**2
+my_nums = [1,2,3,4,5]
+
+list(map(square,my_nums))
+Output: 
+[1,4,9,12,25]
+
+###########
+#Example 2#
+###########
+def splice(name):
+    if len(name)%2 == 0:
+        return 'EVEN'
+    else
+        return name[0]
+
+names=['Andy', 'Eve', 'Sally']
+
+list(map(splice, names))
+Output: 
+['Even', 'E', 'S']
+
+
+#Filter
+filters the given sequence with the help of a function that tests each element in the sequence to be true or not. 
+
+###########
+#Example 3#
+###########
+def check_even(num):
+    return num%2 == 0
+
+mynums=[1,2,3,4,5,6]
+
+list(filter(check_even, mynums))
+Output:
+[2,4,6]
+
+#Lambda
+An anonymous (unnamed) function that is usually used in conjunction with Maps and Filters
+In cases where we only need to use a simple function once in our code (such as the square function in E1), we can use a Lambda instead so we aren't taking up space defining a single use function.
+
+###########
+#Example 4#
+###########
+An example of turning a function into a lambda expression.
+
+def square(num):
+    result = num**2
+    return result
+>
+def square(num):
+    return num**2
+>
+def square(num):return num**2
+>
+lambda num : num **2
+
+
+###########
+#Example 5#
+###########
+Using a lambda with Maps or Filters looks like this:
+
+list(maps(lambda num:num**2,my_nums))

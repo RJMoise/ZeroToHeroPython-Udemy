@@ -1,0 +1,48 @@
+#Scope
+Variables created in Python are saved in the namespace, and those variables have 'Scope'. Scope determines that variables visibility within other parts of your code.
+Python follows a certain order when looking for variables within your code, the LEGB Rule.
+
+Local - Names assigned within a function and no declared Global in that function.
+Enclosing - Names in the local scope of any and all enclosing functinos, from inner to outer.
+Global - Names assigned at the top-level of a file or declared Global within a function.
+Built-In - Names preassigned to built-in names (print for example)
+
+
+###########
+#Example 1#
+###########
+This is a rough example of LEG. Depending on where you print X, you will get different results.
+
+x = 'I am Global'
+
+def func():
+    x = 'I am Enclosing'
+
+    def hello():
+        x = 'I am Local'
+
+
+###########
+#Example 2#
+###########
+In this example, the global x is changed to 200, so even outside the scope of the function, x has been changed.
+
+x = 50
+
+def func():
+    global X
+    x = 200
+
+
+###########
+#Example 2#
+###########
+Instead of reassigning variables using the global keyword within a function, it is often safer and more readable to assign the global variable to the output of a function. That way we can see the reassignement taking place.
+
+x = 50
+
+def func(x):
+    x = 200
+    return x
+
+x = func(x)
